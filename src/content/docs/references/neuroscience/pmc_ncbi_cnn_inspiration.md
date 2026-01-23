@@ -3,8 +3,6 @@ title: CNN 영감 - Hubel & Wiesel의 영향력
 description: Robert H. Wurtz가 Hubel과 Wiesel의 시각 신경과학 분야의 기념비적인 연구 영향력을 다룬 논문 요약.
 ---
 
-# Hubel & Wiesel의 영향력 재조명
-
 이 글은 Robert H. Wurtz가 David Hubel과 Torsten Wiesel의 시각 시스템에 대한 기념비적인 연구 발표 50주년을 기념하며, 해당 연구가 신경과학에 미친 심오하고 지속적인 영향력을 조명합니다. 저자는 그 연구의 영향력을 두 가지 주요 측면에서 고찰합니다.
 
 ## 1. 초기 실험의 즉각적인 영향
