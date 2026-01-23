@@ -20,7 +20,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
               with:
-                  fetch-depth: 0 # Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Set fetch-depth: 0 to fetch all history for all branches and tags
+                  fetch-depth: 0 
             - name: Install, build, and upload your site
               uses: withastro/action@v5
     deploy:
