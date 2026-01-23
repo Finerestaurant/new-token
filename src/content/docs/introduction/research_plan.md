@@ -24,7 +24,7 @@ title: 연구계획서 - 251006
 
 이러한 인간 지능의 능력들은 **Episodic prediction** 및 **dynamic chunking**과 같은 개념들과 깊이 연관됩니다.
 
--   **dynamic chunking (Dynamic Chunking)**: 정보 처리 시, 어디까지를 하나의 묶음(chunk)으로 볼지 능동적으로 선택하고 조절하는 능력입니다. 이는 선제적인 정보 처리 방식과 연결됩니다.
+-   **Dynamic Chunking**: 정보 처리 시, 어디까지를 하나의 묶음(chunk)으로 볼지 능동적으로 선택하고 조절하는 능력입니다. 이는 선제적인 정보 처리 방식과 연결됩니다.
 -   **h-net 및 계층**: Goomba Lab 등에서 중요하게 다루는 h-net과 같은 모델은 dynamic chunking뿐만 아니라 계층적 구조를 강조하며, 이는 정보량의 압축 달성과도 직결됩니다.
 -   **인간의 선입견 (Preconceptions)**: 인간이 정보를 처리할 때 사용하는 '선입견' 또는 '필터'는 dynamic chunking과 유사한 역할을 합니다. 우리는 이러한 필터의 작동 방식에 주목할 필요가 있습니다.
     -   새로운 필터 생성 (창조/새로운 학습)
