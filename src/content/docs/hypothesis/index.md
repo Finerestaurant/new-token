@@ -15,8 +15,6 @@ title: 가설설정
 
 ## claude 답변
 
-## **핵심 키워드**
-
 1. **계층적 예측 (Hierarchical Prediction)**
    - 시간적/추상적 거리에 따른 예측 granularity 차이
    - Near future = 구체적/세밀, Far future = 추상적/광범위
@@ -150,4 +148,3 @@ Total Loss = Σ (w_i × L_i)
 - **Coarse-to-fine decoding** in vision
 - **Temporal abstraction in RL**
 
-이 접근이 특히 흥미로운 이유는 단순히 "여러 토큰을 한번에 예측"이 아니라, **서로 다른 추상화 레벨에서 동시에 작동하는 예측**이라는 점이야. 이건 인간의 인지와 훨씬 더 가까운 것 같아.
