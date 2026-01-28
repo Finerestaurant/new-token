@@ -9,6 +9,8 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'new_token',
+			lastUpdated: true,
+			pagination: false,
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{ label: '서론', autogenerate: { directory: 'introduction' } },

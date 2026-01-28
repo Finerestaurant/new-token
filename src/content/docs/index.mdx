@@ -1,14 +1,51 @@
 ---
-title: new_token
-description: Personal research and development log.
+title: new_token (연구자의 책상)
+description: 차세대 AI 아키텍처 및 인지 모델에 대한 탐구와 연구 기록입니다.
 template: splash
 hero:
-  title: Welcome to new_token!
-  tagline: A journey into personal research and development.
+  title: new_token
+  tagline: 차세대 AI 아키텍처 및 인지 모델에 대한 탐구와 연구 기록입니다.
   actions:
-    - text: Start Exploring
-      link: /new-token/introduction/
+    - text: 프로젝트 소개
+      link: /introduction/
       icon: right-arrow
+    - text: GitHub
+      link: https://github.com/Finerestaurant/new-token
+      icon: external
 ---
 
-이 페이지는 저의 개인 연구 여정을 담고 있습니다. 여기에서는 연구 과정, 참고 문헌, 핵심 철학, 가설 설정, 실험 설계, 그리고 실제 실험 진행 과정 등을 상세히 다룰 예정입니다. 저의 지적 호기심과 문제 해결 능력을 엿볼 수 있는 공간이 되기를 바랍니다.
+import { CardGrid, Card } from '@astrojs/starlight/components';
+
+## 프로젝트 탐색하기
+
+이 공간은 인공지능의 미래를 탐색하는 저의 연구 여정을 기록하고 공유하는 곳입니다. 주요 연구 영역과 깊이 있는 분석 문서를 통해 프로젝트의 핵심을 이해하실 수 있습니다.
+
+<CardGrid>
+  <Card title="가설설정" icon="hypothesis" href="/hypothesis/">
+    Multi-Stream 아키텍처와 같은 혁신적인 접근 방식에 대한 저의 가설들을 탐색합니다.
+  </Card>
+  <Card title="관련 연구" icon="document" href="/hypothesis/multi-stream_related_research/">
+    Multi-Stream, Full-Duplex 모델 등 최신 연구 논문들을 요약하고 분석한 자료입니다.
+  </Card>
+  <Card title="진행 과정" icon="check" href="/progress/">
+    연구의 현재 상태, 달성한 성과 및 다음 단계에 대한 기록을 확인합니다.
+  </Card>
+  <Card title="동적 및 적응형 시스템" icon="setting" href="/dynamic-adaptive-systems/">
+    시스템의 유연성과 적응성에 대한 깊이 있는 탐구를 담고 있습니다.
+  </Card>
+  <Card title="실험 설계" icon="pencil" href="/experimental-design/">
+    가설을 검증하기 위한 실험의 계획과 방법론을 상세히 설명합니다.
+  </Card>
+</CardGrid>
+
+---
+
+## 최신 업데이트
+
+최근 추가된 연구 자료 및 분석들을 살펴보세요.
+
+<CardGrid>
+  <Card title="연구 논문 요약" icon="magnifying-glass" href="/hypothesis/multi-stream_related_research/">
+    다양한 최신 연구 논문 요약을 확인하세요. (예: Multi-Token Attention, Front-Loading Reasoning)
+  </Card>
+</CardGrid>
