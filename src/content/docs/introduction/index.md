@@ -4,7 +4,7 @@ description: 이 문서에서는 연구의 introduction을 다룹니다.
 ---
 
 <figure>
-  <video style={{ width: '100%' }} src="../../../assets/two_seed_lizard.mp4" autoPlay loop muted playsInline></video>
+  <video style={{ width: '100%' }} src="/new-token/two_seed_lizard.mp4" autoPlay loop muted playsInline></video>
   <figcaption style={{ textAlign: 'center', fontSize: '0.9em', fontStyle: 'italic', color: '#666' }}><a href="https://distill.pub/2020/growing-ca/">agi를 향한 당찬 시도</a>는 항상 좌절되고 잊혀져 왔습니다.</figcaption>
 </figure>
 
