@@ -3,10 +3,14 @@ title: 연구에 앞서서...
 description: 이 문서에서는 연구의 introduction을 다룹니다.
 ---
 
+<figure>
+  <video style={{ width: '100%' }} src="../../../assets/two_seed_lizard.mp4" autoPlay loop muted playsInline></video>
+  <figcaption style={{ textAlign: 'center', fontSize: '0.9em', fontStyle: 'italic', color: '#666' }}><a href="https://distill.pub/2020/growing-ca/">agi를 향한 당찬 시도</a>는 항상 좌절되고 잊혀져 왔습니다.</figcaption>
+</figure>
 
 22년 말 chatgpt의 출현 이후, 거의 모든 논문에서는 트랜스포머는 좋기 때문에 사용한다는 서술이 남발하기 시작했습니다. 결과에 대한 이론적인 정립이 되기도 전에, 자본에 압박에 쫓긴 학계 전체가 이미 잘 돌아가는 트랜스포머의 작은 부분만을 개량하는 멈추지 않는 레이스를 해왔습니다. 
 
-> Intelligence is not a game for billionares.
+> Intelligence is not a game for billionare.
 >
 > \- Yi ma @ [ICLR talks](https://youtu.be/LT-F0xSNSjo?si=Z57ngeos4gXtp54d&t=2872)
 
@@ -17,10 +21,3 @@ description: 이 문서에서는 연구의 introduction을 다룹니다.
 
 이미 수많은 사람들이 단순 trial and error의 방법론을 떠나서 자연을 이해하고 재현하고자 하는 방향으로 연구를 진행하고 있습니다. 이 연구도 역시 그러하며, 현재 AI가 가진 근본적인 한계, 즉 유연성의 부재를 해결하고자 합니다. 이 연구는 AI가 미리 주어진 데이터의 패턴을 암기하는 것을 넘어, 새로운 토큰을 스스로 생성하고 학습을 통해 발전하는 길을 탐색합니다. 이를 통해 진정한 의미의 continual learning과 창의성을 구현하고, 궁극적으로는 AGI에 한 걸음 더 다가가는 것을 목표로 합니다.
 
-### 참고문헌 
-
-- [Conjecture](https://www.conjecture.dev/research/robustness-to-scaling-down-more-important-than-i-thought)
-- [Sakana AI](https://sakana.ai)
-- [Yi Ma](https://www.youtube.com/watch?v=QWidx8cYVRs)
-- [Yann LeCun](https://www.youtube.com/watch?v=4__gg83s_Do)
-- [Sapient Inc](https://sapient.inc)
