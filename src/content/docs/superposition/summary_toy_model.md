@@ -1,3 +1,7 @@
+---
+title: "Toy Models of Superposition"
+---
+
 # 중첩의 토이 모델 (Toy Models of Superposition) 요약
 
 이 문서는 Anthropic의 논문 "Toy Models of Superposition"의 핵심 주장, 정의, 그리고 이를 뒷받침하는 증거들을 정리한 것입니다.
