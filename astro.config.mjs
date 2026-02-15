@@ -22,6 +22,7 @@ export default defineConfig({
 					items: [
 						{ label: '초기 가설', autogenerate: { directory: 'hypothesis' } },
 						{ label: 'Multi-Stream 아키텍처', autogenerate: { directory: 'multi-stream' } },
+						{ label: 'Superposition (중첩)', autogenerate: { directory: 'superposition' } },
 					],
 				},
 				{ label: '실험설계', autogenerate: { directory: 'experimental-design' } },
