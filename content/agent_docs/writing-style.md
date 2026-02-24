@@ -22,3 +22,5 @@ tags: ["style-guide", "writing"]
 -   **Headings:** Use headings (`#`, `##`, `###`) to structure your document. Start with an `<h2>` (`##`) for main sections.
 -   **Lists:** Use bulleted or numbered lists to present information clearly.
 -   **Emphasis:** Use **bold** or *italics* for emphasis, but use them sparingly.
+-   **Agent Responses:** In direct interactions, favor plain text and bullet points over markdown headings to ensure a smoother conversational flow, unless complex structuring is explicitly required.
+
