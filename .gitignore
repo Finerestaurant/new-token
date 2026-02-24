@@ -1,5 +1,6 @@
 # Hugo build output
 public/
+dist/
 
 # dependencies
 node_modules/
