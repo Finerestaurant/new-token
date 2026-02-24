@@ -1,0 +1,34 @@
+baseURL = 'https://Finerestaurant.github.io/new-token/'
+languageCode = 'ko-kr'
+title = "The Polymath's Log"
+theme = "PaperMod"
+
+[params]
+  env = "production"
+  title = "The Polymath's Log"
+  description = "AI 아키텍처와 지능의 본질을 파고드는 주간 연구 블로그"
+  author = "Anthony Park"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowToc = true
+  TocOpen = false
+
+  [params.profileMode]
+    enabled = true
+    title = "생각을 깎고 다듬는 공간"
+    subtitle = "매주 하나씩, AI의 본질과 시스템 아키텍처에 대한 깊이 있는 글을 발행합니다."
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "글 모음 (Posts)"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "과거 연구 노트 (Archives)"
+    url = "/archives/"
+    weight = 20
+
+[markup.goldmark.renderer]
+  unsafe = true  # 비디오 태그 등 Raw HTML 허용

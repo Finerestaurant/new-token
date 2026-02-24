@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>유한한 계산 자원에서의 효율적인 압축 | The Polymath&#39;s Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Prediction in the Aging Brain: Merging Cognitive, Neurological, and Evolutionary Perspectives
+개요
+이 논문은 노화하는 뇌의 예측 능력에 대한 인지적, 신경학적, 진화론적 관점을 통합하여 분석합니다. 연구는 노화 뇌가 새로운 정보를 학습하는 능력보다는 기존 지식을 활용하여 예측하는 능력이 더욱 효과적으로 변화한다는 가설을 제시합니다. 이는 노화를 단순히 인지 기능의 저하로만 보는 관점에서 벗어나, 일부 인지 기능이 안정되거나 향상될 수 있음을 시사하며, 이러한 &lsquo;학습-예측 전환&rsquo; 현상에 대한 진화론적 모델, 노화 및 가소성 원리에 기반한 잠재적 설명을 제공합니다.">
+<meta name="author" content="Anthony Park">
+<link rel="canonical" href="https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/compression/efficient_compression_finite_resources/">
+<link crossorigin="anonymous" href="/new-token/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Finerestaurant.github.io/new-token/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Finerestaurant.github.io/new-token/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Finerestaurant.github.io/new-token/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Finerestaurant.github.io/new-token/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Finerestaurant.github.io/new-token/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/compression/efficient_compression_finite_resources/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/compression/efficient_compression_finite_resources/">
+  <meta property="og:site_name" content="The Polymath&#39;s Log">
+  <meta property="og:title" content="유한한 계산 자원에서의 효율적인 압축">
+  <meta property="og:description" content="Prediction in the Aging Brain: Merging Cognitive, Neurological, and Evolutionary Perspectives
+개요 이 논문은 노화하는 뇌의 예측 능력에 대한 인지적, 신경학적, 진화론적 관점을 통합하여 분석합니다. 연구는 노화 뇌가 새로운 정보를 학습하는 능력보다는 기존 지식을 활용하여 예측하는 능력이 더욱 효과적으로 변화한다는 가설을 제시합니다. 이는 노화를 단순히 인지 기능의 저하로만 보는 관점에서 벗어나, 일부 인지 기능이 안정되거나 향상될 수 있음을 시사하며, 이러한 ‘학습-예측 전환’ 현상에 대한 진화론적 모델, 노화 및 가소성 원리에 기반한 잠재적 설명을 제공합니다.">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="archives">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="유한한 계산 자원에서의 효율적인 압축">
+<meta name="twitter:description" content="Prediction in the Aging Brain: Merging Cognitive, Neurological, and Evolutionary Perspectives
+개요
+이 논문은 노화하는 뇌의 예측 능력에 대한 인지적, 신경학적, 진화론적 관점을 통합하여 분석합니다. 연구는 노화 뇌가 새로운 정보를 학습하는 능력보다는 기존 지식을 활용하여 예측하는 능력이 더욱 효과적으로 변화한다는 가설을 제시합니다. 이는 노화를 단순히 인지 기능의 저하로만 보는 관점에서 벗어나, 일부 인지 기능이 안정되거나 향상될 수 있음을 시사하며, 이러한 &lsquo;학습-예측 전환&rsquo; 현상에 대한 진화론적 모델, 노화 및 가소성 원리에 기반한 잠재적 설명을 제공합니다.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archives",
+      "item": "https://Finerestaurant.github.io/new-token/archives/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "유한한 계산 자원에서의 효율적인 압축",
+      "item": "https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/compression/efficient_compression_finite_resources/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "유한한 계산 자원에서의 효율적인 압축",
+  "name": "유한한 계산 자원에서의 효율적인 압축",
+  "description": "Prediction in the Aging Brain: Merging Cognitive, Neurological, and Evolutionary Perspectives\n개요 이 논문은 노화하는 뇌의 예측 능력에 대한 인지적, 신경학적, 진화론적 관점을 통합하여 분석합니다. 연구는 노화 뇌가 새로운 정보를 학습하는 능력보다는 기존 지식을 활용하여 예측하는 능력이 더욱 효과적으로 변화한다는 가설을 제시합니다. 이는 노화를 단순히 인지 기능의 저하로만 보는 관점에서 벗어나, 일부 인지 기능이 안정되거나 향상될 수 있음을 시사하며, 이러한 \u0026lsquo;학습-예측 전환\u0026rsquo; 현상에 대한 진화론적 모델, 노화 및 가소성 원리에 기반한 잠재적 설명을 제공합니다.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Prediction in the Aging Brain: Merging Cognitive, Neurological, and Evolutionary Perspectives\n개요 이 논문은 노화하는 뇌의 예측 능력에 대한 인지적, 신경학적, 진화론적 관점을 통합하여 분석합니다. 연구는 노화 뇌가 새로운 정보를 학습하는 능력보다는 기존 지식을 활용하여 예측하는 능력이 더욱 효과적으로 변화한다는 가설을 제시합니다. 이는 노화를 단순히 인지 기능의 저하로만 보는 관점에서 벗어나, 일부 인지 기능이 안정되거나 향상될 수 있음을 시사하며, 이러한 ‘학습-예측 전환’ 현상에 대한 진화론적 모델, 노화 및 가소성 원리에 기반한 잠재적 설명을 제공합니다.\n핵심 키워드 노화 뇌 (Aging Brain): 나이가 들면서 인지 기능이 변화하는 양상. 예측 (Prediction): 과거의 지식을 바탕으로 미래를 추론하고 기존 지식을 활용하는 과정. 학습 (Learning): 새로운 정보를 습득하는 과정. 학습-예측 전환 (Learning-to-Prediction Shift): 노화에 따라 뇌가 학습보다 예측에 더 의존하게 되는 현상. 인지 변화 (Cognitive Changes): 노년층에서 새로운 정보 습득 능력은 감소하지만, 장기 기억(의미 기억, 결정화된 지식) 활용 능력은 안정적이거나 향상됨. 신경계 변화 (Neural Systems Changes): 노화 뇌에서 실행 제어 네트워크와 디폴트 모드 네트워크 간의 상호작용(동기화)이 증가하는 현상(DECHA 가설) 및 피질하-피질 연결성 감소. 진화론적 관점 (Evolutionary Perspectives): 자원 할당 (Resource Allocation): 예측이 수명 주기 동안 제한된 자원 할당을 최적화하여 노년기에 학습보다 비용 효율적인 대안이 됨. 사회적 학습 (Social Learning): 노년기의 예측 능력이 사회적 학습을 통해 친족에게 지식을 전달하고 포괄 적합도를 높이는 데 적응적 가치를 가짐. 노화의 부산물 (By-product of Senescence): 예측 능력이 학습 능력보다 단순히 더 느리게 저하될 뿐, 직접적인 기능적 중요성은 없을 수 있음. 시사점 이 연구는 노화에 대한 신경인지적-진화론적 통합 관점을 제시하며, 인지 노화를 단순히 결함의 관점이 아닌 ‘전환’의 관점에서 이해하도록 촉진합니다. 이는 인지 기능의 손실과 함께 얻게 되는 이점을 모두 고려해야 함을 강조합니다. 또한, 제안된 가설들을 검증하고 경계 조건을 탐색하기 위한 정형화된 모델의 필요성을 제기하며, 이러한 이론적 제안들이 인지 노화에 대한 새로운 연구를 촉발할 수 있기를 기대합니다. 나아가, 이 연구의 제안은 인간 인지에만 국한되지 않고 학습 능력이 있는 다른 종에도 확장될 수 있습니다.\n",
+  "wordCount" : "290",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Anthony Park"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/compression/efficient_compression_finite_resources/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Polymath's Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Finerestaurant.github.io/new-token/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Finerestaurant.github.io/new-token/" accesskey="h" title="The Polymath&#39;s Log (Alt + H)">The Polymath&#39;s Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Finerestaurant.github.io/new-token/posts/" title="글 모음 (Posts)">
+                    <span>글 모음 (Posts)</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Finerestaurant.github.io/new-token/archives/" title="과거 연구 노트 (Archives)">
+                    <span>과거 연구 노트 (Archives)</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      유한한 계산 자원에서의 효율적인 압축
+    </h1>
+    <div class="post-meta"><span>2 min</span>&nbsp;·&nbsp;<span>Anthony Park</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%ea%b0%9c%ec%9a%94" aria-label="개요">개요</a></li>
+                <li>
+                    <a href="#%ed%95%b5%ec%8b%ac-%ed%82%a4%ec%9b%8c%eb%93%9c" aria-label="핵심 키워드">핵심 키워드</a></li>
+                <li>
+                    <a href="#%ec%8b%9c%ec%82%ac%ec%a0%90" aria-label="시사점">시사점</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9434449/">Prediction in the Aging Brain: Merging Cognitive, Neurological, and Evolutionary Perspectives</a></p>
+<h2 id="개요">개요<a hidden class="anchor" aria-hidden="true" href="#개요">#</a></h2>
+<p>이 논문은 노화하는 뇌의 예측 능력에 대한 인지적, 신경학적, 진화론적 관점을 통합하여 분석합니다. 연구는 노화 뇌가 새로운 정보를 학습하는 능력보다는 기존 지식을 활용하여 예측하는 능력이 더욱 효과적으로 변화한다는 가설을 제시합니다. 이는 노화를 단순히 인지 기능의 저하로만 보는 관점에서 벗어나, 일부 인지 기능이 안정되거나 향상될 수 있음을 시사하며, 이러한 &lsquo;학습-예측 전환&rsquo; 현상에 대한 진화론적 모델, 노화 및 가소성 원리에 기반한 잠재적 설명을 제공합니다.</p>
+<h2 id="핵심-키워드">핵심 키워드<a hidden class="anchor" aria-hidden="true" href="#핵심-키워드">#</a></h2>
+<ul>
+<li><strong>노화 뇌 (Aging Brain):</strong> 나이가 들면서 인지 기능이 변화하는 양상.</li>
+<li><strong>예측 (Prediction):</strong> 과거의 지식을 바탕으로 미래를 추론하고 기존 지식을 활용하는 과정.</li>
+<li><strong>학습 (Learning):</strong> 새로운 정보를 습득하는 과정.</li>
+<li><strong>학습-예측 전환 (Learning-to-Prediction Shift):</strong> 노화에 따라 뇌가 학습보다 예측에 더 의존하게 되는 현상.</li>
+<li><strong>인지 변화 (Cognitive Changes):</strong> 노년층에서 새로운 정보 습득 능력은 감소하지만, 장기 기억(의미 기억, 결정화된 지식) 활용 능력은 안정적이거나 향상됨.</li>
+<li><strong>신경계 변화 (Neural Systems Changes):</strong> 노화 뇌에서 실행 제어 네트워크와 디폴트 모드 네트워크 간의 상호작용(동기화)이 증가하는 현상(DECHA 가설) 및 피질하-피질 연결성 감소.</li>
+<li><strong>진화론적 관점 (Evolutionary Perspectives):</strong>
+<ul>
+<li><strong>자원 할당 (Resource Allocation):</strong> 예측이 수명 주기 동안 제한된 자원 할당을 최적화하여 노년기에 학습보다 비용 효율적인 대안이 됨.</li>
+<li><strong>사회적 학습 (Social Learning):</strong> 노년기의 예측 능력이 사회적 학습을 통해 친족에게 지식을 전달하고 포괄 적합도를 높이는 데 적응적 가치를 가짐.</li>
+<li><strong>노화의 부산물 (By-product of Senescence):</strong> 예측 능력이 학습 능력보다 단순히 더 느리게 저하될 뿐, 직접적인 기능적 중요성은 없을 수 있음.</li>
+</ul>
+</li>
+</ul>
+<h2 id="시사점">시사점<a hidden class="anchor" aria-hidden="true" href="#시사점">#</a></h2>
+<p>이 연구는 노화에 대한 신경인지적-진화론적 통합 관점을 제시하며, 인지 노화를 단순히 결함의 관점이 아닌 &lsquo;전환&rsquo;의 관점에서 이해하도록 촉진합니다. 이는 인지 기능의 손실과 함께 얻게 되는 이점을 모두 고려해야 함을 강조합니다. 또한, 제안된 가설들을 검증하고 경계 조건을 탐색하기 위한 정형화된 모델의 필요성을 제기하며, 이러한 이론적 제안들이 인지 노화에 대한 새로운 연구를 촉발할 수 있기를 기대합니다. 나아가, 이 연구의 제안은 인간 인지에만 국한되지 않고 학습 능력이 있는 다른 종에도 확장될 수 있습니다.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://Finerestaurant.github.io/new-token/">The Polymath&#39;s Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

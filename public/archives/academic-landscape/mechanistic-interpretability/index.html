@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>기계적 해석학 (Mechanistic Interpretability) | The Polymath&#39;s Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Chris Olah 등을 중심으로 한 기계적 해석학의 학계 내 위치와 그 의의를 분석합니다.">
+<meta name="author" content="Anthony Park">
+<link rel="canonical" href="https://Finerestaurant.github.io/new-token/archives/academic-landscape/mechanistic-interpretability/">
+<link crossorigin="anonymous" href="/new-token/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Finerestaurant.github.io/new-token/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Finerestaurant.github.io/new-token/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Finerestaurant.github.io/new-token/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Finerestaurant.github.io/new-token/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Finerestaurant.github.io/new-token/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Finerestaurant.github.io/new-token/archives/academic-landscape/mechanistic-interpretability/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://Finerestaurant.github.io/new-token/archives/academic-landscape/mechanistic-interpretability/">
+  <meta property="og:site_name" content="The Polymath&#39;s Log">
+  <meta property="og:title" content="기계적 해석학 (Mechanistic Interpretability)">
+  <meta property="og:description" content="Chris Olah 등을 중심으로 한 기계적 해석학의 학계 내 위치와 그 의의를 분석합니다.">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="archives">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="기계적 해석학 (Mechanistic Interpretability)">
+<meta name="twitter:description" content="Chris Olah 등을 중심으로 한 기계적 해석학의 학계 내 위치와 그 의의를 분석합니다.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archives",
+      "item": "https://Finerestaurant.github.io/new-token/archives/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "기계적 해석학 (Mechanistic Interpretability)",
+      "item": "https://Finerestaurant.github.io/new-token/archives/academic-landscape/mechanistic-interpretability/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "기계적 해석학 (Mechanistic Interpretability)",
+  "name": "기계적 해석학 (Mechanistic Interpretability)",
+  "description": "Chris Olah 등을 중심으로 한 기계적 해석학의 학계 내 위치와 그 의의를 분석합니다.",
+  "keywords": [
+    
+  ],
+  "articleBody": "학계의 흐름 속 기계적 해석학의 위치 AI 연구 분야에서 **Mechanistic Interpretability(기계적 해석학)**는 전통적인 학계(대학 및 기존 연구소)의 방법론과는 구별되는 독특한 위치를 차지하고 있습니다. 이 움직임은 Neel Nanda, Chris Olah 등과 같은 인물들이 주도하며, Distill이나 Transformer Circuits Thread와 같은 커뮤니티 기반의 신진 세력을 중심으로 발전하고 있습니다.\n주요 주장과 특징 이들의 가장 큰 특징은 신경망의 내부 작동 방식에 대해 매우 과감한 가설을 제시한다는 점입니다. 대표적인 예로, “Feature(특징)는 고차원 공간에서의 물리적 ‘방향(Direction)‘이다\"라는 주장을 들 수 있습니다.\n왜 이들의 주장이 과감한가? 환원주의적 접근의 시도: 개별 뉴런 단위가 아닌, 뉴런들의 선형 결합(Direction)에 의미가 담겨 있다는 가정은 모델 내의 ‘중첩(Superposition)’ 현상을 설명하기 위한 강력한 도구입니다. 하지만 이는 아직 수학적으로 엄밀히 증명된 보편적 법칙이라기보다는, 현상을 설명하기 위해 도입된 ‘Toy Model’에 가깝습니다. 정보 처리의 물리적 실체화: 추상적인 정보 처리 과정을 기하학적 공간에서의 물리적 ‘위치’와 ‘방향’으로 실체화하여 다루려는 시도입니다. 이는 성능 향상에 주력하는 기존의 통계적 접근 방식과는 궤를 달리합니다. 한계점 이러한 접근은 완벽한 수학적 또는 물리적 증명보다는 **직관과 실험적 관찰(심증)**에 상당 부분 의존하는 경향이 있습니다. 연구자들 스스로도 이러한 불완전함을 인지하고 있으며, 아직 완성된 이론이라기보다는 현상을 해석하기 위한 프레임워크를 만들어가는 단계에 있습니다.\n✍️ Editor’s Note (나의 관점) 이들의 주장이 비록 현재 완벽하게 검증된 절대적인 진리는 아닐지라도, **AI를 단순한 ‘경험적 공학’에서 ‘이론적 과학’으로 발전시키기 위한 기틀(Framework)**을 잡는 과정으로서 매우 중요한 의미를 지닙니다.\n독자 여러분이 이들의 연구를 접할 때는, 완성된 정답으로 받아들이기보다는 **“이것은 AI 이론 정립을 위한 신진 세력의 과감한 가설이자 필수적인 도전”**이라는 배경지식을 가지고 비판적으로 해석하시기를 권장합니다.\n",
+  "wordCount" : "226",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Anthony Park"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Finerestaurant.github.io/new-token/archives/academic-landscape/mechanistic-interpretability/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Polymath's Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Finerestaurant.github.io/new-token/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Finerestaurant.github.io/new-token/" accesskey="h" title="The Polymath&#39;s Log (Alt + H)">The Polymath&#39;s Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Finerestaurant.github.io/new-token/posts/" title="글 모음 (Posts)">
+                    <span>글 모음 (Posts)</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Finerestaurant.github.io/new-token/archives/" title="과거 연구 노트 (Archives)">
+                    <span>과거 연구 노트 (Archives)</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      기계적 해석학 (Mechanistic Interpretability)
+    </h1>
+    <div class="post-description">
+      Chris Olah 등을 중심으로 한 기계적 해석학의 학계 내 위치와 그 의의를 분석합니다.
+    </div>
+    <div class="post-meta"><span>2 min</span>&nbsp;·&nbsp;<span>Anthony Park</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%ed%95%99%ea%b3%84%ec%9d%98-%ed%9d%90%eb%a6%84-%ec%86%8d-%ea%b8%b0%ea%b3%84%ec%a0%81-%ed%95%b4%ec%84%9d%ed%95%99%ec%9d%98-%ec%9c%84%ec%b9%98" aria-label="학계의 흐름 속 기계적 해석학의 위치">학계의 흐름 속 기계적 해석학의 위치</a></li>
+                <li>
+                    <a href="#%ec%a3%bc%ec%9a%94-%ec%a3%bc%ec%9e%a5%ea%b3%bc-%ed%8a%b9%ec%a7%95" aria-label="주요 주장과 특징">주요 주장과 특징</a><ul>
+                        
+                <li>
+                    <a href="#%ec%99%9c-%ec%9d%b4%eb%93%a4%ec%9d%98-%ec%a3%bc%ec%9e%a5%ec%9d%b4-%ea%b3%bc%ea%b0%90%ed%95%9c%ea%b0%80" aria-label="왜 이들의 주장이 과감한가?">왜 이들의 주장이 과감한가?</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%ed%95%9c%ea%b3%84%ec%a0%90" aria-label="한계점">한계점</a></li>
+                <li>
+                    <a href="#-editors-note-%eb%82%98%ec%9d%98-%ea%b4%80%ec%a0%90" aria-label="✍️ Editor&rsquo;s Note (나의 관점)">✍️ Editor&rsquo;s Note (나의 관점)</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="학계의-흐름-속-기계적-해석학의-위치">학계의 흐름 속 기계적 해석학의 위치<a hidden class="anchor" aria-hidden="true" href="#학계의-흐름-속-기계적-해석학의-위치">#</a></h2>
+<p>AI 연구 분야에서 **Mechanistic Interpretability(기계적 해석학)**는 전통적인 학계(대학 및 기존 연구소)의 방법론과는 구별되는 독특한 위치를 차지하고 있습니다. 이 움직임은 Neel Nanda, Chris Olah 등과 같은 인물들이 주도하며, <em>Distill</em>이나 <em>Transformer Circuits Thread</em>와 같은 커뮤니티 기반의 신진 세력을 중심으로 발전하고 있습니다.</p>
+<h2 id="주요-주장과-특징">주요 주장과 특징<a hidden class="anchor" aria-hidden="true" href="#주요-주장과-특징">#</a></h2>
+<p>이들의 가장 큰 특징은 신경망의 내부 작동 방식에 대해 <strong>매우 과감한 가설을 제시</strong>한다는 점입니다. 대표적인 예로, &ldquo;Feature(특징)는 고차원 공간에서의 물리적 &lsquo;방향(Direction)&lsquo;이다&quot;라는 주장을 들 수 있습니다.</p>
+<h3 id="왜-이들의-주장이-과감한가">왜 이들의 주장이 과감한가?<a hidden class="anchor" aria-hidden="true" href="#왜-이들의-주장이-과감한가">#</a></h3>
+<ol>
+<li><strong>환원주의적 접근의 시도:</strong> 개별 뉴런 단위가 아닌, 뉴런들의 선형 결합(Direction)에 의미가 담겨 있다는 가정은 모델 내의 &lsquo;중첩(Superposition)&rsquo; 현상을 설명하기 위한 강력한 도구입니다. 하지만 이는 아직 수학적으로 엄밀히 증명된 보편적 법칙이라기보다는, 현상을 설명하기 위해 도입된 &lsquo;Toy Model&rsquo;에 가깝습니다.</li>
+<li><strong>정보 처리의 물리적 실체화:</strong> 추상적인 정보 처리 과정을 기하학적 공간에서의 물리적 &lsquo;위치&rsquo;와 &lsquo;방향&rsquo;으로 실체화하여 다루려는 시도입니다. 이는 성능 향상에 주력하는 기존의 통계적 접근 방식과는 궤를 달리합니다.</li>
+</ol>
+<h2 id="한계점">한계점<a hidden class="anchor" aria-hidden="true" href="#한계점">#</a></h2>
+<p>이러한 접근은 완벽한 수학적 또는 물리적 증명보다는 **직관과 실험적 관찰(심증)**에 상당 부분 의존하는 경향이 있습니다. 연구자들 스스로도 이러한 불완전함을 인지하고 있으며, 아직 완성된 이론이라기보다는 현상을 해석하기 위한 프레임워크를 만들어가는 단계에 있습니다.</p>
+<h2 id="-editors-note-나의-관점">✍️ Editor&rsquo;s Note (나의 관점)<a hidden class="anchor" aria-hidden="true" href="#-editors-note-나의-관점">#</a></h2>
+<p>이들의 주장이 비록 현재 완벽하게 검증된 절대적인 진리는 아닐지라도, **AI를 단순한 &lsquo;경험적 공학&rsquo;에서 &lsquo;이론적 과학&rsquo;으로 발전시키기 위한 기틀(Framework)**을 잡는 과정으로서 매우 중요한 의미를 지닙니다.</p>
+<p>독자 여러분이 이들의 연구를 접할 때는, 완성된 정답으로 받아들이기보다는 **&ldquo;이것은 AI 이론 정립을 위한 신진 세력의 과감한 가설이자 필수적인 도전&rdquo;**이라는 배경지식을 가지고 비판적으로 해석하시기를 권장합니다.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://Finerestaurant.github.io/new-token/">The Polymath&#39;s Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>H-Net | The Polymath&#39;s Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="dynamic chunking을 활용하는 계층적 순환 모델 H-Net을 소개하는 논문입니다.">
+<meta name="author" content="Anthony Park">
+<link rel="canonical" href="https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/dynamic-chunking/h-nets/">
+<link crossorigin="anonymous" href="/new-token/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Finerestaurant.github.io/new-token/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Finerestaurant.github.io/new-token/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Finerestaurant.github.io/new-token/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Finerestaurant.github.io/new-token/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Finerestaurant.github.io/new-token/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/dynamic-chunking/h-nets/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/dynamic-chunking/h-nets/">
+  <meta property="og:site_name" content="The Polymath&#39;s Log">
+  <meta property="og:title" content="H-Net">
+  <meta property="og:description" content="dynamic chunking을 활용하는 계층적 순환 모델 H-Net을 소개하는 논문입니다.">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="archives">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H-Net">
+<meta name="twitter:description" content="dynamic chunking을 활용하는 계층적 순환 모델 H-Net을 소개하는 논문입니다.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archives",
+      "item": "https://Finerestaurant.github.io/new-token/archives/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "H-Net",
+      "item": "https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/dynamic-chunking/h-nets/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "H-Net",
+  "name": "H-Net",
+  "description": "dynamic chunking을 활용하는 계층적 순환 모델 H-Net을 소개하는 논문입니다.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Dynamic Chunking for End-to-End Hierarchical Sequence Modeling\n개요 최근 언어 모델(LM)의 발전에도 불구하고, 토큰화와 같은 전처리 단계는 진정한 종단 간(end-to-end) 파운데이션 모델의 구현에 걸림돌이 되어왔다. 이 논문은 콘텐츠 및 컨텍스트에 따라 자동으로 세분화 전략을 학습하는 동적 청킹(Dynamic Chunking, DC) 메커니즘을 가능하게 하는 새로운 기술들을 소개한다. 이 기술들을 명시적인 계층적 네트워크(H-Net)에 통합함으로써, 암묵적으로 계층적인 토큰화-LM-비토큰화 파이프라인을 단일 모델로 대체할 수 있다.\nH-Net은 바이트 수준에서 작동하는 단일 계층의 계층 구조를 가질 때, BPE 토큰을 사용하는 강력한 트랜스포머 언어 모델보다 우수한 성능을 보인다. 여러 단계의 계층 구조를 반복하면 추상화 수준을 다양하게 모델링하여 성능이 더욱 향상되며, 데이터 스케일링에서 훨씬 더 나은 성능을 보여 두 배 크기의 토큰 기반 트랜스포머와 동등한 성능을 달성한다. 영어로 사전 학습된 H-Net은 문자 수준의 견고성을 크게 향상시키며, 어떠한 휴리스틱이나 명시적인 감독 없이도 의미 있는 데이터 의존적 청킹 전략을 학습한다. 또한, 중국어, 코드, DNA 시퀀스와 같이 토큰화 휴리스틱이 약한 언어 및 양식에서 H-Net의 개선 효과는 더욱 두드러진다.\n핵심 키워드 동적 청킹 (Dynamic Chunking, DC): 콘텐츠 및 컨텍스트에 따라 자동으로 세분화 전략을 학습하는 메커니즘. 계층적 네트워크 (Hierarchical Network, H-Net): 동적 청킹 메커니즘을 통합하여 토큰화-LM-비토큰화 파이프라인을 대체하는 종단 간 모델. 종단 간 계층적 시퀀스 모델링 (End-to-End Hierarchical Sequence Modeling): 전처리 단계 없이 원시 데이터로부터 직접 학습하고 추상화를 구축하는 모델링 방식. 토큰화 (Tokenization): 원시 텍스트를 BPE(Byte-Pair Encoding)와 같은 알고리즘을 통해 미리 정의된 청크로 압축하는 과정. 라우팅 모듈 (Routing Module): 인접한 표현 간의 유사성을 측정하여 청크 경계를 예측하는 모듈. 스무딩 모듈 (Smoothing Module): 이산적인 청킹 작업을 미분 가능한 계산으로 변환하여 경계 학습을 용이하게 하고, 불확실한 경계의 영향을 완화하는 모듈. 비율 손실 (Ratio Loss): 모델이 너무 많은 벡터를 유지하거나 과도하게 압축하는 것을 방지하고, 원하는 압축 비율로 수렴하도록 유도하는 손실 함수. Mamba-2 레이어 (Mamba-2 layers): H-Net의 인코더 및 디코더 네트워크에 사용되는 상태 공간 모델(SSM) 기반 레이어로, 미세한 데이터 처리 및 압축에 효율적이다. 시사점 H-Net은 토큰화라는 고정된 전처리 단계를 제거함으로써 딥러닝의 본질적인 목표인 원시 데이터로부터 의미 있는 패턴을 학습하고 추상화를 구축하는 데 한 걸음 더 나아갔다. 이는 언어 모델의 성능을 향상시킬 뿐만 아니라, 다음과 같은 중요한 시사점을 제공한다.\n진정한 종단 간 모델의 가능성: H-Net은 토큰화 없이도 기존 토큰 기반 모델과 동등하거나 그 이상의 성능을 보여주며, 진정한 종단 간 파운데이션 모델의 개발 가능성을 제시한다. 이는 모델이 데이터로부터 직접 추상화를 학습하게 하여, 수작업으로 설계된 휴리스틱의 한계를 극복할 수 있게 한다. 다국어 및 다양한 양식에서의 성능 향상: 토큰화 휴리스틱이 약한 중국어, 코드, DNA 시퀀스와 같은 언어 및 양식에서 H-Net의 성능 개선이 더욱 두드러진다는 점은, 범용적인 모델이 다양한 데이터에 더 잘 적용될 수 있음을 시사한다. 견고성 및 해석 가능성 증대: H-Net은 텍스트 교란에 대해 훨씬 더 견고하며, 학습된 경계의 시각화를 통해 의미론적으로 일관된 단위를 자동으로 발견하는 능력을 보여준다. 이는 모델의 신뢰성과 해석 가능성을 높이는 데 기여한다. 효율적인 자원 활용: 동적 청킹을 통해 모델은 정보량이 적은 영역을 압축하고 정보량이 많은 콘텐츠를 적절한 세분성으로 보존함으로써 계산 자원을 효율적으로 할당할 수 있다. 확장성 및 계층적 추상화: H-Net의 재귀적 설계는 여러 단계의 계층 구조를 통해 더 높은 수준의 추상화를 학습할 수 있게 하며, 이는 데이터 및 파라미터 스케일링에서 더 효율적인 성능 향상을 가져온다. ",
+  "wordCount" : "477",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Anthony Park"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Finerestaurant.github.io/new-token/archives/academic-landscape/references/dynamic-chunking/h-nets/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Polymath's Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Finerestaurant.github.io/new-token/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Finerestaurant.github.io/new-token/" accesskey="h" title="The Polymath&#39;s Log (Alt + H)">The Polymath&#39;s Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Finerestaurant.github.io/new-token/posts/" title="글 모음 (Posts)">
+                    <span>글 모음 (Posts)</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Finerestaurant.github.io/new-token/archives/" title="과거 연구 노트 (Archives)">
+                    <span>과거 연구 노트 (Archives)</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      H-Net
+    </h1>
+    <div class="post-description">
+      dynamic chunking을 활용하는 계층적 순환 모델 H-Net을 소개하는 논문입니다.
+    </div>
+    <div class="post-meta"><span>3 min</span>&nbsp;·&nbsp;<span>Anthony Park</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%ea%b0%9c%ec%9a%94" aria-label="개요">개요</a></li>
+                <li>
+                    <a href="#%ed%95%b5%ec%8b%ac-%ed%82%a4%ec%9b%8c%eb%93%9c" aria-label="핵심 키워드">핵심 키워드</a></li>
+                <li>
+                    <a href="#%ec%8b%9c%ec%82%ac%ec%a0%90" aria-label="시사점">시사점</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><a href="https://arxiv.org/html/2507.07955v2">Dynamic Chunking for End-to-End Hierarchical Sequence Modeling</a></p>
+<h2 id="개요">개요<a hidden class="anchor" aria-hidden="true" href="#개요">#</a></h2>
+<p>최근 언어 모델(LM)의 발전에도 불구하고, 토큰화와 같은 전처리 단계는 진정한 종단 간(end-to-end) 파운데이션 모델의 구현에 걸림돌이 되어왔다. 이 논문은 콘텐츠 및 컨텍스트에 따라 자동으로 세분화 전략을 학습하는 동적 청킹(Dynamic Chunking, DC) 메커니즘을 가능하게 하는 새로운 기술들을 소개한다. 이 기술들을 명시적인 계층적 네트워크(H-Net)에 통합함으로써, 암묵적으로 계층적인 토큰화-LM-비토큰화 파이프라인을 단일 모델로 대체할 수 있다.</p>
+<p>H-Net은 바이트 수준에서 작동하는 단일 계층의 계층 구조를 가질 때, BPE 토큰을 사용하는 강력한 트랜스포머 언어 모델보다 우수한 성능을 보인다. 여러 단계의 계층 구조를 반복하면 추상화 수준을 다양하게 모델링하여 성능이 더욱 향상되며, 데이터 스케일링에서 훨씬 더 나은 성능을 보여 두 배 크기의 토큰 기반 트랜스포머와 동등한 성능을 달성한다. 영어로 사전 학습된 H-Net은 문자 수준의 견고성을 크게 향상시키며, 어떠한 휴리스틱이나 명시적인 감독 없이도 의미 있는 데이터 의존적 청킹 전략을 학습한다. 또한, 중국어, 코드, DNA 시퀀스와 같이 토큰화 휴리스틱이 약한 언어 및 양식에서 H-Net의 개선 효과는 더욱 두드러진다.</p>
+<h2 id="핵심-키워드">핵심 키워드<a hidden class="anchor" aria-hidden="true" href="#핵심-키워드">#</a></h2>
+<ul>
+<li><strong>동적 청킹 (Dynamic Chunking, DC):</strong> 콘텐츠 및 컨텍스트에 따라 자동으로 세분화 전략을 학습하는 메커니즘.</li>
+<li><strong>계층적 네트워크 (Hierarchical Network, H-Net):</strong> 동적 청킹 메커니즘을 통합하여 토큰화-LM-비토큰화 파이프라인을 대체하는 종단 간 모델.</li>
+<li><strong>종단 간 계층적 시퀀스 모델링 (End-to-End Hierarchical Sequence Modeling):</strong> 전처리 단계 없이 원시 데이터로부터 직접 학습하고 추상화를 구축하는 모델링 방식.</li>
+<li><strong>토큰화 (Tokenization):</strong> 원시 텍스트를 BPE(Byte-Pair Encoding)와 같은 알고리즘을 통해 미리 정의된 청크로 압축하는 과정.</li>
+<li><strong>라우팅 모듈 (Routing Module):</strong> 인접한 표현 간의 유사성을 측정하여 청크 경계를 예측하는 모듈.</li>
+<li><strong>스무딩 모듈 (Smoothing Module):</strong> 이산적인 청킹 작업을 미분 가능한 계산으로 변환하여 경계 학습을 용이하게 하고, 불확실한 경계의 영향을 완화하는 모듈.</li>
+<li><strong>비율 손실 (Ratio Loss):</strong> 모델이 너무 많은 벡터를 유지하거나 과도하게 압축하는 것을 방지하고, 원하는 압축 비율로 수렴하도록 유도하는 손실 함수.</li>
+<li><strong>Mamba-2 레이어 (Mamba-2 layers):</strong> H-Net의 인코더 및 디코더 네트워크에 사용되는 상태 공간 모델(SSM) 기반 레이어로, 미세한 데이터 처리 및 압축에 효율적이다.</li>
+</ul>
+<h2 id="시사점">시사점<a hidden class="anchor" aria-hidden="true" href="#시사점">#</a></h2>
+<p>H-Net은 토큰화라는 고정된 전처리 단계를 제거함으로써 딥러닝의 본질적인 목표인 원시 데이터로부터 의미 있는 패턴을 학습하고 추상화를 구축하는 데 한 걸음 더 나아갔다. 이는 언어 모델의 성능을 향상시킬 뿐만 아니라, 다음과 같은 중요한 시사점을 제공한다.</p>
+<ul>
+<li><strong>진정한 종단 간 모델의 가능성:</strong> H-Net은 토큰화 없이도 기존 토큰 기반 모델과 동등하거나 그 이상의 성능을 보여주며, 진정한 종단 간 파운데이션 모델의 개발 가능성을 제시한다. 이는 모델이 데이터로부터 직접 추상화를 학습하게 하여, 수작업으로 설계된 휴리스틱의 한계를 극복할 수 있게 한다.</li>
+<li><strong>다국어 및 다양한 양식에서의 성능 향상:</strong> 토큰화 휴리스틱이 약한 중국어, 코드, DNA 시퀀스와 같은 언어 및 양식에서 H-Net의 성능 개선이 더욱 두드러진다는 점은, 범용적인 모델이 다양한 데이터에 더 잘 적용될 수 있음을 시사한다.</li>
+<li><strong>견고성 및 해석 가능성 증대:</strong> H-Net은 텍스트 교란에 대해 훨씬 더 견고하며, 학습된 경계의 시각화를 통해 의미론적으로 일관된 단위를 자동으로 발견하는 능력을 보여준다. 이는 모델의 신뢰성과 해석 가능성을 높이는 데 기여한다.</li>
+<li><strong>효율적인 자원 활용:</strong> 동적 청킹을 통해 모델은 정보량이 적은 영역을 압축하고 정보량이 많은 콘텐츠를 적절한 세분성으로 보존함으로써 계산 자원을 효율적으로 할당할 수 있다.</li>
+<li><strong>확장성 및 계층적 추상화:</strong> H-Net의 재귀적 설계는 여러 단계의 계층 구조를 통해 더 높은 수준의 추상화를 학습할 수 있게 하며, 이는 데이터 및 파라미터 스케일링에서 더 효율적인 성능 향상을 가져온다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://Finerestaurant.github.io/new-token/">The Polymath&#39;s Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
