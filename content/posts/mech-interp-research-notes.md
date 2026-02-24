@@ -22,27 +22,27 @@ categories: ["Research Log"]
 
 ### Distill & Transformer Circuits 연구 흐름 (시간순)
 
-*   **2020: "Zoom In: An Introduction to Circuits"** (Olah et al., Distill)
+*   **2020: ["Zoom In: An Introduction to Circuits"](https://distill.pub/2020/circuits/zoom-in/)** (Olah et al., Distill)
     *   **기여:** 신경망을 이해 가능한 '회로(Circuit)'의 집합으로 보는 관점을 제시. 뉴런 및 회로 수준 분석의 토대를 마련.
 
-*   **2021: "A Mathematical Framework for Transformer Circuits"** (Elhage et al., Anthropic)
+*   **2021: ["A Mathematical Framework for Transformer Circuits"](https://transformer-circuits.pub/2021/framework/index.html)** (Elhage et al., Anthropic)
     *   **기여:** 트랜스포머 아키텍처 분석을 위한 수학적 프레임워크를 제공. 2-레이어 모델에서 **인덕션 헤드(Induction Heads)**를 처음으로 발견하고 정의.
 
-*   **2022 (March): "Toy Models of Superposition"** (Elhage et al., Anthropic)
+*   **2022 (March): ["Toy Models of Superposition"](https://transformer-circuits.pub/2022/toy_model/index.html)** (Elhage et al., Anthropic)
     *   **기여:** 모델이 뉴런보다 더 많은 특징(Feature)을 표현하기 위해 사용하는 '중첩(Superposition)' 현상을 탐구. 다중의미성(Polysemanticity)과 상전이(Phase Change) 개념을 소개.
 
-*   **2022 (December): "In-context Learning and Induction Heads"** (Olsson et al., Anthropic)
+*   **2022 (December): ["In-context Learning and Induction Heads"](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)** (Olsson et al., Anthropic)
     *   **기여:** 인덕션 헤드를 체계적으로 연구하여, 이것이 모델 규모에 관계없이 인컨텍스트 학습(In-context Learning)을 가능하게 하는 핵심 메커니즘이라는 강력한 증거를 제시.
 
-*   **2023: "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning"** (Brunefors et al., Anthropic)
+*   **2023: ["Towards Monosemanticity: Decomposing Language Models With Dictionary Learning"](https://transformer-circuits.pub/2023/monosemantic-features/index.html)** (Brunefors et al., Anthropic)
     *   **기여:** 희소 오토인코더(Sparse Autoencoders, SAEs)를 사용하여 다중의미적 뉴런을 단일 의미(Monosemantic)의 특징으로 분해하는 방법을 제안. 해석 가능성을 크게 향상시킴.
 
-*   **2024: "Scaling Monosemanticity"** (Anthropic)
+*   **2024: ["Scaling Monosemanticity"](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html)** (Anthropic)
     *   **기여:** 희소 오토인코더 접근법이 대규모 모델에도 확장 가능함을 보여주었으며, 실제 상용 모델에서 수백만 개의 해석 가능한 특징을 추출함.
 
 ### 평행적 연구 흐름 (Parallel Research Stems)
 
-*   **"Physics of Language Models"** (Allen Zhu)
+*   **["Physics of Language Models"](https://physics.allen-zhu.com/)** (Allen Zhu)
     *   **접근법:** LLM의 현상을 단순 관찰하는 것을 넘어, 이상적인 환경에서 지능의 각 차원(구조, 추론 등)을 연구하여 '보편 법칙'을 발견하려는 '물리학적 접근'을 제안.
     *   **기여:** '왜' 현상이 일어나는지 이해하고, 벤치마크 중심의 경험적 공학에서 벗어나 AI의 근본 원리를 탐구하려는 기계적 해석학과 목표를 공유함.
 
