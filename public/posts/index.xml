@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on The Polymath&#39;s Log</title>
-    <link>https://Finerestaurant.github.io/new-token/posts/</link>
+    <link>http://localhost:1313/new-token/posts/</link>
     <description>Recent content in Posts on The Polymath&#39;s Log</description>
     <generator>Hugo -- 0.156.0</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Finerestaurant.github.io/new-token/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/new-token/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>기계적 해석학(Mechanistic Interpretability) 전반적인 정리</title>
-      <link>https://Finerestaurant.github.io/new-token/posts/01-mechanistic-interpretability/</link>
+      <link>http://localhost:1313/new-token/posts/01-mechanistic-interpretability/</link>
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://Finerestaurant.github.io/new-token/posts/01-mechanistic-interpretability/</guid>
+      <guid>http://localhost:1313/new-token/posts/01-mechanistic-interpretability/</guid>
       <description>&lt;h2 id=&#34;서론-왜-기계적-해석학인가&#34;&gt;서론: 왜 기계적 해석학인가?&lt;/h2&gt;
 &lt;p&gt;거대 언어 모델(LLM)은 블랙박스처럼 작동합니다. 기계적 해석학(Mechanistic Interpretability)은 이 거대한 파라미터 덩어리 안에서 정보가 어떻게 흐르고 조작되는지, 마치 뇌과학자가 뉴런을 해부하듯 분석하려는 시도입니다.&lt;/p&gt;
 &lt;h2 id=&#34;1-주요-흐름과-인물들-the-pioneers&#34;&gt;1. 주요 흐름과 인물들 (The Pioneers)&lt;/h2&gt;
