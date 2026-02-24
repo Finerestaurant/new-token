@@ -1,7 +1,7 @@
 ---
 title: "기계적 해석학 연구 노트"
 date: 2026-02-24
-draft: true # 초안 상태로 설정하여 빌드 시 기본적으로 제외됩니다.
+draft: false # 초안 상태로 설정하여 빌드 시 기본적으로 제외됩니다.
 tags: ["Mechanistic Interpretability", "Research Notes", "Draft"]
 categories: ["Research Log"]
 ---

@@ -1,6 +1,6 @@
 baseURL = 'https://Finerestaurant.github.io/new-token/'
 languageCode = 'ko-kr'
-title = "The Polymath's Log"
+title = "New token"
 theme = "PaperMod"
 
 [params]
