@@ -1,5 +1,5 @@
 ---
-title: "Logical Structure Guide"
+title: "Logical Structure Guide for Hypothesis-Driven Arguments"
 date: 2026-02-24
 tags: ["style-guide", "logic"]
 ---
