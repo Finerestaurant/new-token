@@ -16,18 +16,14 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{ label: '서론', autogenerate: { directory: 'introduction' } },
-				{ label: '동적 및 적응형 시스템', autogenerate: { directory: 'dynamic-adaptive-systems' } },
 				{
-					label: '가설',
-					items: [
-						{ label: '초기 가설', autogenerate: { directory: 'hypothesis' } },
-						{ label: 'Multi-Stream 아키텍처', autogenerate: { directory: 'multi-stream' } },
-						{ label: 'Superposition (중첩)', autogenerate: { directory: 'superposition' } },
-					],
+					label: '내 생각의 전개 (My Thoughts & Hypotheses)',
+					autogenerate: { directory: 'my-thoughts' }
 				},
-				{ label: '실험설계', autogenerate: { directory: 'experimental-design' } },
-				{ label: '진행과정', autogenerate: { directory: 'progress' } },
-				{ label: '참고문헌', autogenerate: { directory: 'references' } },
+				{
+					label: '학계의 흐름 (Academic Landscape)',
+					autogenerate: { directory: 'academic-landscape' }
+				}
 			],
 		}),
 	],
