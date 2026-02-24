@@ -1,5 +1,7 @@
 ---
-title: "Agent Documentation"
+title: "문서 작성 가이드"
 ---
 
-This section contains guidelines for writing documentation, including style, structure, and logic.
+이 섹션은 효과적인 문서 작성을 위한 여러 가이드를 포함합니다.
+
+글쓰기 스타일, 논리 구조 등 일관되고 설득력 있는 문서를 작성하는 데 필요한 원칙들을 안내합니다.
