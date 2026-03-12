@@ -1,7 +1,7 @@
 ---
 title: "기계적 해석학(Mechanistic Interpretability) 전반적인 정리"
 date: 2026-02-24
-draft: false
+draft: true
 tags: ["AI", "Interpretability", "Research"]
 categories: ["Weekly Log"]
 ---
