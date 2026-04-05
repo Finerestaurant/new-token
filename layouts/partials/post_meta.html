@@ -18,8 +18,8 @@
 {{- end }}
 {{- end }}
 
-{{- if and .IsPage (eq (hugo.Environment) "production") -}}
-{{- $scratch.Add "meta" (slice "<span id='gc-count'></span>") }}
+{{- if eq (hugo.Environment) "production" -}}
+{{- $scratch.Add "meta" (slice (printf "<span class='gc-count' data-gc-path='%s'></span>" .RelPermalink)) }}
 {{- end -}}
 
 {{- with ($scratch.Get "meta") }}

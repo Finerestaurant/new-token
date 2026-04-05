@@ -3,14 +3,16 @@
         async src="//gc.zgo.at/count.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var el = document.getElementById('gc-count');
-  if (!el) return;
-  fetch('https://newtoken.goatcounter.com/counter/' + encodeURIComponent(window.location.pathname) + '.txt')
-    .then(function (r) { return r.text(); })
-    .then(function (text) {
-      el.textContent = text.trim() + ' views';
-    })
-    .catch(function () { el.remove(); });
+  document.querySelectorAll('.gc-count[data-gc-path]').forEach(function (el) {
+    var path = el.getAttribute('data-gc-path');
+    fetch('https://newtoken.goatcounter.com/counter/' + encodeURIComponent(path) + '.txt')
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        var count = text.trim();
+        el.textContent = count + ' views';
+      })
+      .catch(function () { el.remove(); });
+  });
 });
 </script>
 {{- end -}}
