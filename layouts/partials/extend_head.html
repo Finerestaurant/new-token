@@ -4,8 +4,8 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.gc-count[data-gc-path]').forEach(function (el) {
-    var path = el.getAttribute('data-gc-path');
-    fetch('https://newtoken.goatcounter.com/counter/' + encodeURIComponent(path) + '.txt')
+    var path = el.getAttribute('data-gc-path').replace(/\/$/, '');
+    fetch('https://newtoken.goatcounter.com/counter' + path + '.txt')
       .then(function (r) { return r.text(); })
       .then(function (text) {
         var count = text.trim();
