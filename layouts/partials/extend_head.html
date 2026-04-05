@@ -1,0 +1,16 @@
+{{- if eq (hugo.Environment) "production" -}}
+<script data-goatcounter="https://newtoken.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('gc-count');
+  if (!el) return;
+  fetch('https://newtoken.goatcounter.com/counter/' + encodeURIComponent(window.location.pathname) + '.txt')
+    .then(function (r) { return r.text(); })
+    .then(function (text) {
+      el.textContent = text.trim() + ' views';
+    })
+    .catch(function () { el.remove(); });
+});
+</script>
+{{- end -}}
